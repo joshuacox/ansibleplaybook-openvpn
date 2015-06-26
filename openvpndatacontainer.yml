@@ -1,0 +1,13 @@
+---
+- name: openVPNdata 
+  hosts: openvpn
+  sudo: True
+  tasks:
+  - name: openVPNdata container
+    docker:
+      name: ovpn-data
+      image: busybox
+      state: reloaded
+      restart_policy: always
+      volumes:
+      - "/etc/openvpn"

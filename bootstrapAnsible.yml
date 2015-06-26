@@ -1,0 +1,6 @@
+---
+- name: bootstrap Ansible on debian/ubuntu
+  gather_facts: False
+  hosts: bootstrapAnsible
+  tasks:
+  - script: bootstrapAnsible.sh  creates=/root/boostrapAnsible.txt

@@ -1,0 +1,15 @@
+---
+- name: OpenVPN config
+  hosts: openvpn
+  vars:
+     url_contents: "{{ lookup('file', 'url') }}"
+  sudo: True
+  tasks:
+  - name: openVPN config
+    docker:
+      image: kylemanna/openvpn
+      state: restarted
+      user: udp://"{{ url_contents }}"
+      volumes_from:
+        - ovpn-data
+      commaind: openvpn_genconfig

@@ -1,0 +1,14 @@
+---
+- name: OpenVPN retrieve client
+  hosts: openvpn
+  vars:
+     clientname_contents: "{{ lookup('file', 'clientname') }}"
+  sudo: True
+  tasks:
+  - name: openVPN retrieve client
+    docker:
+      image: kylemanna/openvpn
+      state: restarted
+      volumes_from:
+        - ovpn-data
+      commaind: ovpn_getclient "{{ clientname_contents }}" > "{{ clientname_contents }}".ovpn

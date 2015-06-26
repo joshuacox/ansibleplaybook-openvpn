@@ -1,0 +1,16 @@
+---
+- name: RancherServer
+  hosts: rancherserver
+  sudo: True
+  tasks:
+  - name: openVPN container
+    docker:
+      name: openvpn
+      image: kylemanna/openvpn
+      state: reloaded
+      restart_policy: always
+      privileged: yes
+      volumes_from:
+        - ovpn-data
+      ports:
+        - "1194:1194/udp"

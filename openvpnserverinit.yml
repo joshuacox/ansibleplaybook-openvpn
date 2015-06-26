@@ -1,0 +1,12 @@
+---
+- name: OpenVPN config
+  hosts: openvpn
+  sudo: True
+  tasks:
+  - name: openVPN config
+    docker:
+      image: kylemanna/openvpn
+      state: restarted
+      volumes_from:
+        - ovpn-data
+      commaind: ovpn_initpki

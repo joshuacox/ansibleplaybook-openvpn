@@ -1,0 +1,14 @@
+---
+- name: OpenVPN config
+  hosts: openvpn
+  vars:
+     clientname_contents: "{{ lookup('file', 'clientname') }}"
+  sudo: True
+  tasks:
+  - name: openVPN config
+    docker:
+      image: kylemanna/openvpn
+      state: restarted
+      volumes_from:
+        - ovpn-data
+      commaind: easyrsa build-client-full "{{ clientname_contents }}" nopass
