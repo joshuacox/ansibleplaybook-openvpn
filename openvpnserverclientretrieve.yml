@@ -11,4 +11,4 @@
       state: restarted
       volumes_from:
         - ovpn-data
-      commaind: ovpn_getclient "{{ clientname_contents }}" > "{{ clientname_contents }}".ovpn
+      command: ovpn_getclient "{{ clientname_contents }}"

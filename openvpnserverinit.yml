@@ -9,4 +9,4 @@
       state: restarted
       volumes_from:
         - ovpn-data
-      commaind: ovpn_initpki
+      command: ovpn_initpki

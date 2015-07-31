@@ -11,4 +11,4 @@
       state: restarted
       volumes_from:
         - ovpn-data
-      commaind: easyrsa build-client-full "{{ clientname_contents }}" nopass
+      command: easyrsa build-client-full "{{ clientname_contents }}" nopass

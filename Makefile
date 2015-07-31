@@ -3,7 +3,7 @@ all: help
 help:
 	@echo ""
 	@echo "-- Help Menu"
-	@echo ""   1. make server       - run rancher server (then configure Auth)
+	@echo ""   1. make server       - run openvpn server (then configure Auth)
 
 config: url dataplay configplay initplay layconfiglock
 

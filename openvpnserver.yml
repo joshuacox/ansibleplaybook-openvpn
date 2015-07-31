@@ -1,6 +1,6 @@
 ---
-- name: RancherServer
-  hosts: rancherserver
+- name: OpenVPN Server
+  hosts: openvpn
   sudo: True
   tasks:
   - name: openVPN container

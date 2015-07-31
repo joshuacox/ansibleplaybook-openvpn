@@ -9,7 +9,6 @@
     docker:
       image: kylemanna/openvpn
       state: restarted
-      user: udp://"{{ url_contents }}"
       volumes_from:
         - ovpn-data
-      commaind: openvpn_genconfig
+      command: ovpn_genconfig -u "{{ url_contents }}"
